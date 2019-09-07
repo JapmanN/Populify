@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/JapmanN/spotify-popularity-game/issues"
   },
-  "homepage": "https://github.com/JapmanN/spotify-popularity-game#readme"
+  "homepage": "https://github.com/JapmanN/spotify-popularity-game#readme",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "spotify-web-api-node": "^4.0.0"
+  }
 }
