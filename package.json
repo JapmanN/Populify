@@ -1,0 +1,19 @@
+{
+  "name": "spotifyapp",
+  "version": "1.0.0",
+  "description": "A web application powered by the Spotify Web API which makes the users guess which one of their most listened artists have more streams on their songs.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JapmanN/spotify-popularity-game.git"
+  },
+  "author": "Japman Nagra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JapmanN/spotify-popularity-game/issues"
+  },
+  "homepage": "https://github.com/JapmanN/spotify-popularity-game#readme"
+}
