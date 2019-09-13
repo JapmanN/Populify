@@ -1,0 +1,32 @@
+<% include ./partials/header %>
+
+<h1 class="text-center">
+	Logged in as <a href="#"><%= user.body.display_name %></a>
+</h1>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-6 bg-light">
+			<h1><%= savedTracks.body.items[0].track.name %></h1>
+			<button class="btn btn-primary">This song is more popular</button>
+		</div>
+		<div class="col-lg-6 bg-light">
+			<h1><%= savedTracks.body.items[1].track.name %></h1>
+			<button class="btn btn-primary">This song is more popular</button>
+		</div>
+	</div>
+</div>
+
+<div id="showPopularSong" class="text-center mt-5 d-none">
+	<% if(savedTracks.body.items[1].track.popularity > savedTracks.body.items[0].track.popularity) { %>
+	<strong><%= savedTracks.body.items[1].track.name %></strong> is more popular than <strong><%= savedTracks.body.items[0].track.name %></strong>
+	<% } else { %>
+	<strong><%= savedTracks.body.items[0].track.name %></strong> is more popular than <strong><%= savedTracks.body.items[1].track.name %></strong>
+	<% } %>
+</div>
+
+<% include ./partials/footer %>
+
+<!-- savedTracks.body.items[i].track.name -->
+<!-- savedTracks.body.items.length  -->
+<!-- songs.songs_arr[Math.floor(Math.random() * 51)] -->

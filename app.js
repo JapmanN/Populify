@@ -16,7 +16,7 @@ app.use(express.static(__dirname + "/public"));
 // APPLICATION CODE
 // ================
 var spotifyApi = new SpotifyWebApi({
-	scopes: ['user-read-private', 'user-read-email'],
+	scopes: ['user-read-private', 'user-read-email', 'user-follow-read', 'user-library-read'],
 	redirectUri: 'REDIRECT_URI',
 	clientId: 'CLIENT_ID',
 	clientSecret: 'CLIENT_SECRET',
@@ -33,6 +33,7 @@ app.get('/login', (req, res) => {
 app.get('/callback', (req, res) => {
 	var code = req.query.code;	
 	// Retrieve an access token and a refresh token
+	
 	spotifyApi.authorizationCodeGrant(code).then(function(data) {
 		// Set the access token on the API object to use it in later calls
 		spotifyApi.setAccessToken(data.body['access_token']);
@@ -44,7 +45,19 @@ app.get('/callback', (req, res) => {
 });
 
 app.get('/app', (req, res) => {
-	res.send("Does this thing work?");
+	spotifyApi.getMe().then(function(user) {
+		spotifyApi.getFollowedArtists().then(function(followedArtists) {
+			spotifyApi.getMySavedTracks({limit: 50}).then(function(savedTracks) {
+				res.render("index", {user: user, followedArtists: followedArtists, savedTracks: savedTracks});
+			}, function(err) {
+				console.log('Something went wrong!', err);
+			});
+		}, function(err) {
+			console.log('Something went wrong!', err);
+		});
+	}, function(err) {
+		console.log('Something went wrong!', err);
+	});
 });
 
 // ==============
