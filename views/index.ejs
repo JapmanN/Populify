@@ -1,27 +1,67 @@
 <% include ./partials/header %>
 
-<h1 class="text-center">
-	Logged in as <a href="#"><%= user.body.display_name %></a>
-</h1>
 
-<div class="container-fluid">
+<nav class="navbar navbar-expand-lg bg-dark">
+  <div class="container">
+    <span class="navbar-brand mx-auto text-light nav-text">Logged in as <a href="#" class="text-white"><%= user.body.display_name %></a></span>
+  </div>
+</nav>
+
+<div class="container">
+	<div class="jumbotron mt-4 text-center rounded-lg">
+		<h1 class="text-center">
+			Welcome to the
+		</h1>
+		<h1 class="display-4">
+			<i class="fas fa-music text-secondary mr-3"></i>
+			<span id="title">Spotify-Popularity-Game</span>
+			<i class="fas fa-music text-secondary ml-3"></i>
+		</h1>
+		<!-- <p class="lead">Use the "up" arrow to choose the song you think is more popular</p> -->
+		<!-- <hr class="my-4"> -->
+		<p></p>
+		<a class="btn btn-dark btn-lg rounded-lg" href="/more-info" role="button">More Information</a>
+	</div>
+</div>
+
+
+<div class="container">
 	<div class="row">
-		<div class="col-lg-6 bg-light">
-			<h1><%= savedTracks.body.items[0].track.name %></h1>
-			<button class="btn btn-primary">This song is more popular</button>
+		<div class="col-lg-6 text-center">
+			<center>
+				<div class="card bg-none" style="width: 30rem;">
+				  <img src="<%= savedTracks.body.items[0].track.album.images[0].url %>" class="card-img-top">
+				  <div class="card-body">
+					<h1 class="card-title option"><%= savedTracks.body.items[0].track.name %></h1>
+					<button class="btn btn-outline-success px-3" title="'<%= savedTracks.body.items[0].track.name %>' is more popular">
+						<i class="fas fa-caret-up fa-3x"></i>
+					</button>
+				  </div>
+				</div>
+			</center>
 		</div>
-		<div class="col-lg-6 bg-light">
-			<h1><%= savedTracks.body.items[1].track.name %></h1>
-			<button class="btn btn-primary">This song is more popular</button>
+		
+		<div class="col-lg-6">
+			<center>
+				<div class="card bg-none">
+				  <img src="<%= savedTracks.body.items[39].track.album.images[0].url %>" class="card-img-top" style="width: 30rem;">
+				  <div class="card-body ">
+					<h1 class="card-title option"><%= savedTracks.body.items[39].track.name %></h1>
+					<button class="btn btn-outline-success px-3" title="'<%= savedTracks.body.items[39].track.name %>' is more popular">
+						<i class="fas fa-caret-up fa-3x"></i>
+					</button>
+				  </div>
+				</div>
+			</center>
 		</div>
 	</div>
 </div>
 
 <div id="showPopularSong" class="text-center mt-5 d-none">
-	<% if(savedTracks.body.items[1].track.popularity > savedTracks.body.items[0].track.popularity) { %>
-	<strong><%= savedTracks.body.items[1].track.name %></strong> is more popular than <strong><%= savedTracks.body.items[0].track.name %></strong>
+	<% if(savedTracks.body.items[39].track.popularity > savedTracks.body.items[0].track.popularity) { %>
+	<strong><%= savedTracks.body.items[39].track.name %></strong> is more popular than <strong><%= savedTracks.body.items[0].track.name %></strong>
 	<% } else { %>
-	<strong><%= savedTracks.body.items[0].track.name %></strong> is more popular than <strong><%= savedTracks.body.items[1].track.name %></strong>
+	<strong><%= savedTracks.body.items[0].track.name %></strong> is more popular than <strong><%= savedTracks.body.items[39].track.name %></strong>
 	<% } %>
 </div>
 

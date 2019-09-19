@@ -1,0 +1,33 @@
+/* ==================== */
+/* GENERAL TAGS STYLING */
+/* ==================== */
+body { background: #232323; color: white; font-family: 'Poppins', 'Londrina Solid', cursive; font-weight: bold; }
+
+nav { background: #232323 !important; }
+
+img { height: 450px; border-radius: 30px !important; }
+
+/* =============== */
+/* CLASSES STYLING  */
+/* =============== */
+.jumbotron { background: black; }
+
+.nav-text { font-size: 25px !important; }
+
+.navbar-brand { font-family: 'Poppins', 'Londrina Solid', cursive; font-size: 2em; /* letter-spacing: 1px; */ }
+
+.option { font-size: 3em; font-weight: 600;}
+
+.bg-none { background: none;}
+
+/* =============== */
+/* BUTTONS STYLING */
+/* =============== */
+.btn-dark { transition: 0.3s all; font-weight: 500; }
+
+.btn-dark:hover { transform: scale(0.9); }
+
+/* ============ */
+/* ID'S STYLING */
+/* ============ */
+#title { font-family: 'Poppins', sans-serif; font-weight: bold;}
