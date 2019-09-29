@@ -11,6 +11,7 @@ const express       = require("express"),
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 
+app.locals.score = 0;
 
 // ================
 // APPLICATION CODE
@@ -48,7 +49,14 @@ app.get('/app', (req, res) => {
 	spotifyApi.getMe().then(function(user) {
 		spotifyApi.getFollowedArtists().then(function(followedArtists) {
 			spotifyApi.getMySavedTracks({limit: 50}).then(function(savedTracks) {
-				res.render("index", {user: user, followedArtists: followedArtists, savedTracks: savedTracks});
+				var songs = {
+					
+				};
+				savedTracks.body.items.forEach(function(track) {
+					var trackPopularity = track.track.popularity; 
+					songs[track.track.name] = trackPopularity;
+				});
+				res.render("index", {user: user, followedArtists: followedArtists, savedTracks: savedTracks, songs: songs});
 			}, function(err) {
 				console.log('Something went wrong!', err);
 			});

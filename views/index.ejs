@@ -1,14 +1,14 @@
 <% include ./partials/header %>
 
 
-<nav class="navbar navbar-expand-lg bg-dark">
+<nav class="navbar navbar-expand-lg">
   <div class="container">
     <span class="navbar-brand mx-auto text-light nav-text">Logged in as <a href="#" class="text-white"><%= user.body.display_name %></a></span>
   </div>
 </nav>
 
-<div class="container">
-	<div class="jumbotron mt-4 text-center rounded-lg">
+<div class="container mt-5">
+	<div class="jumbotron text-center rounded-lg">
 		<h1 class="text-center">
 			Welcome to the
 		</h1>
@@ -20,49 +20,50 @@
 		<!-- <p class="lead">Use the "up" arrow to choose the song you think is more popular</p> -->
 		<!-- <hr class="my-4"> -->
 		<p></p>
-		<a class="btn btn-dark btn-lg rounded-lg" href="/more-info" role="button">More Information</a>
+		<a class="btn btn-dark mt-2 btn-lg rounded-lg" href="/more-info" role="button">More Information</a>
 	</div>
-</div>
-
+</div>	
 
 <div class="container">
 	<div class="row">
 		<div class="col-lg-6 text-center">
 			<center>
-				<div class="card bg-none" style="width: 30rem;">
-				  <img src="<%= savedTracks.body.items[0].track.album.images[0].url %>" class="card-img-top">
-				  <div class="card-body">
-					<h1 class="card-title option"><%= savedTracks.body.items[0].track.name %></h1>
-					<button class="btn btn-outline-success px-3" title="'<%= savedTracks.body.items[0].track.name %>' is more popular">
-						<i class="fas fa-caret-up fa-3x"></i>
-					</button>
-				  </div>
+				<% for (var i = Math.floor(Math.random() * 50), j = 0; j < 1; j++) { %>
+				<div class="card bg-none border-0" style="width: 30rem;">	
+					<img src="<%= savedTracks.body.items[i].track.album.images[0].url %>" class="card-img-top">
+					<div class="card-body">
+						<h1 class="card-title option"><%= savedTracks.body.items[i].track.name %></h1>
+						<button class="btn btn-outline-success btn-block rounded-pill"><i class="fas fa-caret-up fa-3x"></i></button>
+					</div>
 				</div>
+				
 			</center>
 		</div>
 		
 		<div class="col-lg-6">
 			<center>
-				<div class="card bg-none">
-				  <img src="<%= savedTracks.body.items[39].track.album.images[0].url %>" class="card-img-top" style="width: 30rem;">
-				  <div class="card-body ">
-					<h1 class="card-title option"><%= savedTracks.body.items[39].track.name %></h1>
-					<button class="btn btn-outline-success px-3" title="'<%= savedTracks.body.items[39].track.name %>' is more popular">
-						<i class="fas fa-caret-up fa-3x"></i>
-					</button>
-				  </div>
+				<% for (var k = Math.floor(Math.random() * 50), m = 0; m < 1; m++) { %>
+				<div class="card bg-none border-0" style="width: 30rem;">
+					<img src="<%= savedTracks.body.items[k].track.album.images[0].url %>" class="card-img-top">
+					<div class="card-body">
+						<h1 class="card-title option"><%= savedTracks.body.items[k].track.name %></h1>
+						<button class="btn btn-outline-success btn-block rounded-pill"><i class="fas fa-caret-up fa-3x"></i></button>
+					</div>
 				</div>
+				
+				<div id="showPopularSong" class="text-center mt-5 d-none">
+					<% if(savedTracks.body.items[i].track.popularity > savedTracks.body.items[k].track.popularity) { %>
+						<%= savedTracks.body.items[i].track.name %> is more popular than <%= savedTracks.body.items[k].track.name %>
+					<% } else { %>
+						<%= savedTracks.body.items[k].track.name %> is more popular than <%= savedTracks.body.items[i].track.name %>
+					<% } %>
+				</div>
+				
+				<% } %>
+				<% } %>
 			</center>
 		</div>
 	</div>
-</div>
-
-<div id="showPopularSong" class="text-center mt-5 d-none">
-	<% if(savedTracks.body.items[39].track.popularity > savedTracks.body.items[0].track.popularity) { %>
-	<strong><%= savedTracks.body.items[39].track.name %></strong> is more popular than <strong><%= savedTracks.body.items[0].track.name %></strong>
-	<% } else { %>
-	<strong><%= savedTracks.body.items[0].track.name %></strong> is more popular than <strong><%= savedTracks.body.items[39].track.name %></strong>
-	<% } %>
 </div>
 
 <% include ./partials/footer %>
