@@ -57,19 +57,24 @@
 
 
 <script>
+	  var score = localStorage.getItem("scoreKey");
+
+	  if (score == null || score == 0) {
+		score = 0;
+		localStorage.setItem("scoreKey", score);
+	  } else {
+		
+	  }
+	
 	$("button.choice_two_btn").on("click", function() {
 		var first_song = <%= savedTracks.body.items[i].track.popularity %>;
 		var second_song = <%= savedTracks.body.items[k].track.popularity %>;
 		if(second_song > first_song) {
-			alert("correct");
-			location.reload();
+			ifUserGuessesRight();
 		} else if(second_song == first_song) {
-			alert("same popularity");
-			location.reload();
+			ifSamePopularity();
 		} else {
-			alert("wrong");
-			$("#theBody").addClass("d-none");
-			$("div#showScoreHtml").removeClass("d-none");
+			ifUserGuessesWrong();
 		}
 	});
 
@@ -77,22 +82,39 @@
 		var first_song = <%= savedTracks.body.items[i].track.popularity %>;
 		var second_song = <%= savedTracks.body.items[k].track.popularity %>;
 		if(first_song > second_song) {
-			alert("correct");
-			location.reload();
+			ifUserGuessesRight();
 		} else if(second_song == first_song) {
-			alert("same popularity");
-			location.reload();
+			ifSamePopularity();
 		} else {
-			alert("wrong");
-			$("#theBody").addClass("d-none");
-			$("div#showScoreHtml").removeClass("d-none");
+			ifUserGuessesWrong();
 		}
 	});
+	
+	function ifUserGuessesRight() {
+		score++;
+		localStorage.setItem("scoreKey", score);
+		alert("correct");
+		location.reload();
+	}
+	
+	function ifSamePopularity() {
+		alert("same popularity");
+		location.reload();
+	}
+	
+	function ifUserGuessesWrong() {
+		$("span.scoreHTML").text(score);
+		score = 0;
+		localStorage.setItem("scoreKey", score);
+		alert("wrong");
+		$("#theBody").addClass("d-none");
+		$("div#showScoreHtml").removeClass("d-none");
+	}
 </script>
 
 <div class="container d-none" id="showScoreHtml">
 	<div class="jumbotron text-center">
-		<h1 class="option">Your Score is __</h1>
+		<h1 class="option">Your Score is <span class="scoreHTML"><%= %></span></h1>
 		<button onclick="location.reload();" class="btn btn-dark btn-lg rounded-lg mt-2"><i class="fa fa-redo-alt mr-2"></i>   Try Again</button>
 	</div>
 </div>

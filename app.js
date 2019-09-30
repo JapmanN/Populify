@@ -11,6 +11,7 @@ const express       = require("express"),
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 
+app.locals.score = 0;
 
 // ================
 // APPLICATION CODE
