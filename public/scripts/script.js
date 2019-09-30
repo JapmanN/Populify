@@ -12,6 +12,6 @@
 // 	nameOfSong = $("h1.selected").text();
 // });
 
-function test() {
-	
-}
+// function newSongs() {
+// 	window.location.reload();
+// }

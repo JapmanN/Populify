@@ -23,7 +23,7 @@
 	</div>
 </div>	
 
-<div class="container">
+<div class="container" id="theBody">
 	<div class="row">
 		<div class="col-lg-6 text-center">
 			<center>
@@ -35,7 +35,7 @@
 						<button class="btn btn-outline-success btn-block rounded-pill choice_one_btn"><i class="fas fa-caret-up fa-3x"></i></button>
 					</div>
 				</div>
-				
+				<% } %>
 			</center>
 		</div>
 		
@@ -49,42 +49,54 @@
 						<button class="btn btn-outline-success btn-block rounded-pill choice_two_btn"><i class="fas fa-caret-up fa-3x"></i></button>
 					</div>
 				</div>
-				
-				<script>
-					$("button.choice_two_btn").on("click", function() {
-						var random = <%= savedTracks.body.items[i].track.popularity %>;
-						var random_two = <%= savedTracks.body.items[k].track.popularity %>;
-						if(random_two > random) {
-							alert("correct");
-						} else if(random_two == random) {
-							alert("same popularity");
-						} else {
-							alert("wrong");
-						}
-					});
-					
-					
-					$("button.choice_one_btn").on("click", function() {
-						var random = <%= savedTracks.body.items[i].track.popularity %>;
-						var random_two = <%= savedTracks.body.items[k].track.popularity %>;
-						if(random > random_two) {
-							alert("correct");
-						} else if(random_two == random) {
-							alert("same popularity");
-						} else {
-							alert("wrong");
-						}
-					});
-				</script>
-				<% } %>
 				<% } %>
 			</center>
 		</div>
 	</div>
 </div>
 
-<br><br>
-<br><br>
+
+<script>
+	$("button.choice_two_btn").on("click", function() {
+		var first_song = <%= savedTracks.body.items[i].track.popularity %>;
+		var second_song = <%= savedTracks.body.items[k].track.popularity %>;
+		if(second_song > first_song) {
+			alert("correct");
+			location.reload();
+		} else if(second_song == first_song) {
+			alert("same popularity");
+			location.reload();
+		} else {
+			alert("wrong");
+			$("#theBody").addClass("d-none");
+			$("div#showScoreHtml").removeClass("d-none");
+		}
+	});
+
+	$("button.choice_one_btn").on("click", function() {
+		var first_song = <%= savedTracks.body.items[i].track.popularity %>;
+		var second_song = <%= savedTracks.body.items[k].track.popularity %>;
+		if(first_song > second_song) {
+			alert("correct");
+			location.reload();
+		} else if(second_song == first_song) {
+			alert("same popularity");
+			location.reload();
+		} else {
+			alert("wrong");
+			$("#theBody").addClass("d-none");
+			$("div#showScoreHtml").removeClass("d-none");
+		}
+	});
+</script>
+
+<div class="container d-none" id="showScoreHtml">
+	<div class="jumbotron text-center">
+		<h1 class="option">Your Score is __</h1>
+		<button onclick="location.reload();" class="btn btn-dark btn-lg rounded-lg mt-2"><i class="fa fa-redo-alt mr-2"></i>   Try Again</button>
+	</div>
+</div>
+
 <% include ./partials/footer %>
 
 <!-- savedTracks.body.items[i].track.name -->
