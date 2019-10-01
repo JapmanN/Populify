@@ -33,8 +33,8 @@ app.get('/login', (req, res) => {
 
 app.get('/callback', (req, res) => {
 	var code = req.query.code;	
-	// Retrieve an access token and a refresh token
 	
+	// Retrieve an access token and a refresh token
 	spotifyApi.authorizationCodeGrant(code).then(function(data) {
 		// Set the access token on the API object to use it in later calls
 		spotifyApi.setAccessToken(data.body['access_token']);
@@ -49,11 +49,6 @@ app.get('/app', (req, res) => {
 	spotifyApi.getMe().then(function(user) {
 		spotifyApi.getFollowedArtists().then(function(followedArtists) {
 			spotifyApi.getMySavedTracks({limit: 50}).then(function(savedTracks) {
-				// var songs = {};
-				// savedTracks.body.items.forEach(function(track) {
-				// 	var trackPopularity = track.track.popularity; 
-				// 	songs[track.track.name] = trackPopularity;
-				// });
 				res.render("index", {user: user, followedArtists: followedArtists, savedTracks: savedTracks});
 			}, function(err) {
 				console.log('Something went wrong!', err);

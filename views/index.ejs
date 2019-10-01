@@ -8,18 +8,19 @@
 
 <div class="container mt-5">
 	<div class="jumbotron text-center rounded-lg">
-		<h1 class="text-center">
-			Welcome to the
-		</h1>
-		<h1 class="display-4">
-			<i class="fas fa-music text-secondary mr-3"></i>
-			<span id="title">Spotify-Popularity-Game</span>
-			<i class="fas fa-music text-secondary ml-3"></i>
-		</h1>
-		<!-- <p class="lead">Use the "up" arrow to choose the song you think is more popular</p> -->
-		<!-- <hr class="my-4"> -->
-		<p></p>
-		<a class="btn btn-dark mt-2 btn-lg rounded-lg" href="/more-info" role="button">More Information</a>
+		<div id="showScoreHtml" class="d-none">
+			<h1 class="option" id="H1Score">Your Score is <span id="scoreWhileUserIsPlaying" class="text-success"><%= %></span></h1>
+			<button onclick="location.reload();" id="playAgain" class="btn btn-dark btn-lg rounded-lg d-none mt-2"><i class="fa fa-redo-alt mr-2"></i>   Try Again</button>
+		</div>
+		<div id="welcome" class="d-none">
+			<h1 class="text-center">Welcome to the</h1>
+			<h1 class="display-4">
+				<i class="fas fa-music text-secondary mr-3"></i>
+				<span id="title">Spotify-Popularity-Game</span>
+				<i class="fas fa-music text-secondary ml-3"></i>
+			</h1>
+			<a class="btn btn-dark mt-2 btn-lg rounded-lg" href="/more-info" role="button">More Information</a>
+		</div>
 	</div>
 </div>	
 
@@ -57,14 +58,16 @@
 
 
 <script>
-	  var score = localStorage.getItem("scoreKey");
+	var score = localStorage.getItem("scoreKey");
 
-	  if (score == null || score == 0) {
+	if (score == null || score == 0) {
 		score = 0;
 		localStorage.setItem("scoreKey", score);
-	  } else {
-		
-	  }
+		$("div#welcome").removeClass("d-none");
+	} else {
+		$("div#showScoreHtml").removeClass("d-none");
+		$("span#scoreWhileUserIsPlaying").html(score);
+	}
 	
 	$("button.choice_two_btn").on("click", function() {
 		var first_song = <%= savedTracks.body.items[i].track.popularity %>;
@@ -103,21 +106,21 @@
 	}
 	
 	function ifUserGuessesWrong() {
-		$("span.scoreHTML").text(score);
+		$("button#playAgain").removeClass("d-none");
+		$("h1#H1Score").html("Your Final Score is <span id='scoreWhileUserIsPlaying' class='text-success'>" +  score + "</span");
 		score = 0;
 		localStorage.setItem("scoreKey", score);
 		alert("wrong");
 		$("#theBody").addClass("d-none");
-		$("div#showScoreHtml").removeClass("d-none");
 	}
 </script>
-
+<!-- 
 <div class="container d-none" id="showScoreHtml">
 	<div class="jumbotron text-center">
-		<h1 class="option">Your Score is <span class="scoreHTML"><%= %></span></h1>
+		<h1 class="option">Your Score is <span class="scoreHTML"></span></h1>
 		<button onclick="location.reload();" class="btn btn-dark btn-lg rounded-lg mt-2"><i class="fa fa-redo-alt mr-2"></i>   Try Again</button>
 	</div>
-</div>
+</div> -->
 
 <% include ./partials/footer %>
 
