@@ -24,8 +24,18 @@ var spotifyApi = new SpotifyWebApi({
 	state: 'mySTATE'
 });
 
+// =======================
 // Create Authorization URL
+// =======================
 var authorizeURL = spotifyApi.createAuthorizeURL(spotifyApi._credentials.scopes, spotifyApi._credentials.state);
+
+
+// ==================
+// APPLICATION ROUTES
+// ==================
+app.get('/', (req, res) => {
+	res.render("home");
+});
 
 app.get('/login', (req, res) => {
 	res.redirect(authorizeURL);
@@ -60,6 +70,12 @@ app.get('/app', (req, res) => {
 		console.log('Something went wrong!', err);
 	});
 });
+
+
+app.get('/more-info', (req, res) => {
+	res.render("moreInfo");
+});
+
 
 // ==============
 // SERVER STARTUP
