@@ -77,6 +77,11 @@ app.get('/more-info', (req, res) => {
 });
 
 
+app.get("*", (req, res) => {
+	res.render("error")
+});
+
+
 // ==============
 // SERVER STARTUP
 // ==============

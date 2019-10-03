@@ -58,11 +58,11 @@
 
 
 <script>
-	var score = localStorage.getItem("scoreKey");
+	var score = localStorage.getItem("theScore");
 
 	if (score == null || score == 0) {
 		score = 0;
-		localStorage.setItem("scoreKey", score);
+		localStorage.setItem("theScore", score);
 		$("div#welcome").removeClass("d-none");
 	} else {
 		$("div#showScoreHtml").removeClass("d-none");
@@ -95,7 +95,7 @@
 	
 	function ifUserGuessesRight() {
 		score++;
-		localStorage.setItem("scoreKey", score);
+		localStorage.setItem("theScore", score);
 		alert("correct");
 		location.reload();
 	}
@@ -109,7 +109,7 @@
 		$("button#playAgain").removeClass("d-none");
 		$("h1#H1Score").html("Your Final Score is <span id='scoreWhileUserIsPlaying' class='text-success'>" +  score + "</span");
 		score = 0;
-		localStorage.setItem("scoreKey", score);
+		localStorage.setItem("theScore", score);
 		alert("wrong");
 		$("#theBody").addClass("d-none");
 	}
