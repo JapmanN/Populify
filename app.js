@@ -73,12 +73,16 @@ app.get('/app', (req, res) => {
 
 
 app.get('/more-info', (req, res) => {
-	res.render("moreInfo");
+	spotifyApi.getMe().then(function(user) {
+		res.render("moreInfo", {user: user});
+	}, function(err) {
+		console.log('Something went wrong!', err);
+	});
 });
 
 
 app.get("*", (req, res) => {
-	res.render("error")
+	res.render("error");
 });
 
 

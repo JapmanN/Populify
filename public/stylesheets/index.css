@@ -1,7 +1,7 @@
 /* ==================== */
 /* GENERAL TAGS STYLING */
 /* ==================== */
-body { background: #232323; color: white; font-family: 'Poppins', 'Londrina Solid', cursive; font-weight: lighter; }
+body { background: #232323; color: white; font-family: 'Poppins', 'Londrina Solid', cursive; font-weight: lighter; padding-top: 70px; }
 
 nav { background: #000 !important; }
 
@@ -19,6 +19,14 @@ img { height: 450px; border-radius: 30px !important; }
 .option { font-size: 3em; font-weight: 600;}
 
 .bg-none { background: none;}
+
+.nav-icons { font-size: 22px; transition: all 0.3s }
+
+.nav-icons:hover { color: #28a745 !important; }
+
+#logout { border-bottom: 1px solid transparent; }
+
+#logout:hover { border-bottom: 1px solid white; }
 
 /* =============== */
 /* BUTTONS STYLING */

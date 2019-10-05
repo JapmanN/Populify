@@ -1,9 +1,28 @@
 <% include ./partials/header %>
 
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
-    <span class="navbar-brand mx-auto text-light nav-text">Logged in as <a href="#" class="text-white"><%= user.body.display_name %></a></span>
-  </div>
+	  <div>
+		  <ul class="navbar-nav mr-auto">
+			  <li class="nav-item">
+				  <a href="https://github.com/JapmanN" class="text-white" target="_blank"><i class="fab fa-github nav-icons mr-3"></i></a>
+				  <a href="https://www.linkedin.com/in/japman-nagra-464b7116a/" class="text-white" target="_blank"><i class="fab fa-linkedin nav-icons"></i></a>
+			  </li>
+		  </ul>
+	  </div>
+	  
+	  <span class="navbar-brand mx-auto text-light nav-text">
+		  Logged in as <a href="#" class="text-white font-weight-bold"><%= user.body.display_name %></a>
+	  </span>
+	  
+	  <div>
+		  <ul class="navbar-nav ml-auto">
+			  <li class="nav-item">
+				  <a class="nav-link text-white" href="https://accounts.spotify.com/en/status" id="logout">Logout</a>
+			  </li>
+		  </ul>
+	  </div>
+	</div>
 </nav>
 
 <div class="container mt-5">
@@ -56,10 +75,9 @@
 	</div>
 </div>
 
-
 <script>
 	var score = localStorage.getItem("theScore");
-
+	
 	if (score == null || score == 0) {
 		score = 0;
 		localStorage.setItem("theScore", score);
@@ -94,33 +112,97 @@
 	});
 	
 	function ifUserGuessesRight() {
+		// Update Score
 		score++;
 		localStorage.setItem("theScore", score);
-		alert("correct");
-		location.reload();
+		
+		// Show CORRECT modal
+		$('#correctModal').modal('show');
+
+		// Hide the CORRECT modal after 1 second
+		setTimeout(function() {
+			$('#correctModal').modal('hide');
+		}, 1000);
+		
+		// Start refreshing the page after 800 milliseconds
+		setTimeout(function() {
+			location.reload();
+		}, 800);
 	}
 	
 	function ifSamePopularity() {
-		alert("same popularity");
-		location.reload();
+		// Update Score
+		score++;
+		localStorage.setItem("theScore", score);
+		
+		// Show EQUAL modal
+		$('#equalModal').modal('show');
+
+		// Hide the EQUAL modal after 1 second
+		setTimeout(function() {
+			$('#equalModal').modal('hide');
+		}, 1500);
+		
+		// Start refreshing the page after 800 milliseconds
+		setTimeout(function() {
+			location.reload();
+		}, 1250);
 	}
 	
 	function ifUserGuessesWrong() {
+		// Show the button to play again and show the FINAL SCORE
 		$("button#playAgain").removeClass("d-none");
 		$("h1#H1Score").html("Your Final Score is <span id='scoreWhileUserIsPlaying' class='text-success'>" +  score + "</span");
+		
+		// Set the SCORE back to 0 and store it
 		score = 0;
 		localStorage.setItem("theScore", score);
-		alert("wrong");
-		$("#theBody").addClass("d-none");
+		
+		// Show WRONG modal
+		$('#wrongModal').modal('show');
+		
+		setTimeout(function() {
+			$('#wrongModal').modal('hide');
+			$("#theBody").addClass("d-none");
+		}, 1000);
 	}
 </script>
-<!-- 
-<div class="container d-none" id="showScoreHtml">
-	<div class="jumbotron text-center">
-		<h1 class="option">Your Score is <span class="scoreHTML"></span></h1>
-		<button onclick="location.reload();" class="btn btn-dark btn-lg rounded-lg mt-2"><i class="fa fa-redo-alt mr-2"></i>   Try Again</button>
-	</div>
-</div> -->
+
+
+<!-- Modal if user guesses CORRECT -->
+<div class="modal fade" id="correctModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="background: none;">
+      <div class="modal-body text-center">
+        <i class="bg-success rounded-circle p-5 fas fa-check fa-10x"></i>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal if popularity is EQUAL -->
+<div class="modal fade" id="equalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="background: none;">
+      <div class="modal-body text-center">
+        <i class="bg-warning rounded-circle p-5 fas fa-equals fa-10x" style="padding: 3rem 60px !important;"></i>
+		  <h1 class="font-weight-bold">Same Popularity. <span class="text-success">Free Point!</span></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal if user guesses WRONG -->
+<div class="modal fade" id="wrongModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="background: none;">
+      <div class="modal-body text-center">
+        <i class="bg-danger rounded-circle p-5 fas fa-times fa-10x" style="padding: 3rem 75px !important;"></i>
+      </div>
+    </div>
+  </div>
+</div>
 
 <% include ./partials/footer %>
 
