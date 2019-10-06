@@ -1,18 +1,22 @@
 <% include ./partials/header %>
 
+		<link rel="stylesheet" href="../stylesheets/index.css">
+	</head>
+<body>
+
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
 	  <div>
 		  <ul class="navbar-nav mr-auto">
 			  <li class="nav-item">
-				  <a href="https://github.com/JapmanN" class="text-white" target="_blank"><i class="fab fa-github nav-icons mr-3"></i></a>
+				  <a href="https://github.com/JapmanN" class="text-white mr-3" target="_blank"><i class="fab fa-github nav-icons"></i></a>
 				  <a href="https://www.linkedin.com/in/japman-nagra-464b7116a/" class="text-white" target="_blank"><i class="fab fa-linkedin nav-icons"></i></a>
 			  </li>
 		  </ul>
 	  </div>
 	  
 	  <span class="navbar-brand mx-auto text-light nav-text">
-		  Logged in as <a href="#" class="text-white font-weight-bold"><%= user.body.display_name %></a>
+		  Logged in as <span href="#" class="text-white font-weight-bold"><%= user.body.display_name %></span>
 	  </span>
 	  
 	  <div>
@@ -28,10 +32,10 @@
 <div class="container mt-5">
 	<div class="jumbotron">
 		<h1 class="display-4 font-weight-bold">Spotify-Popularity Game</h1>
-		<p class="lead">A web app </p>
+		<p class="lead"></p>
 		<hr class="my-4">
 		<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-		<a class="btn btn-success btn-lg rounded-pill" href="/app" role="button">Ready to play?</a>
+		<a class="btn btn-success btn-lg rounded-pill" href="/app" role="button">Ready to play? Click me!</a>
 	</div>
 </div>
 

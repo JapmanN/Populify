@@ -10,7 +10,7 @@ img { height: 450px; border-radius: 30px !important; }
 /* =============== */
 /* CLASSES STYLING */
 /* =============== */
-.jumbotron { background: #000; }
+.jumbotron { background: black; }
 
 .nav-text { font-size: 25px !important; }
 

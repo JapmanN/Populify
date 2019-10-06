@@ -1,0 +1,53 @@
+body {
+	background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+	color: white;
+	font-family: 'Poppins', 'Londrina Solid', cursive;
+	font-weight: lighter;
+	padding-top: 70px;
+}
+
+nav { 
+	background: #000 !important; 
+}
+
+
+/* =============== */
+/* NAVBAR STYLING */
+/* =============== */
+.nav-text { font-size: 25px !important; }
+
+.navbar-brand { font-family: 'Poppins', 'Londrina Solid', cursive; font-size: 2em; /* letter-spacing: 1px; */ }
+
+.nav-icons { font-size: 22px; transition: all 0.3s }
+
+.nav-icons:hover { color: #28a745 !important; }
+
+#logout { border-bottom: 1px solid transparent; }
+
+#logout:hover { border-bottom: 1px solid white; }
+
+
+/* =============== */
+/* CONTENT OF PAGE */
+/* =============== */
+#content-heading {
+	font-weight: bold;
+	color: black;
+}
+
+#badge {
+	font-size: 16px;
+	font-weight: lighter;
+}
+
+#app-desc {
+	color: #232323;
+	font-size: 20px;
+	font-weight: 600;
+}
+/* =============== */
+/* BUTTONS STYLING */
+/* =============== */
+.btn-dark { transition: 0.3s all; font-weight: 500; }
+
+.btn-dark:hover { transform: scale(0.9); }
