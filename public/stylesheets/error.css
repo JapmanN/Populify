@@ -1,0 +1,32 @@
+body {
+	background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+	color: white;
+	font-family: 'Poppins', 'Londrina Solid', cursive;
+	font-weight: lighter;
+}
+
+/* ================ */
+/* CUSTOM CONTAINER */
+/* ================ */
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1350px;
+    }
+}
+
+/* =============== */
+/* NAVBAR STYLING */
+/* =============== */
+nav { background: #000 !important; }
+
+.nav-text { font-size: 25px !important; }
+
+.navbar-brand { font-family: 'Poppins', 'Londrina Solid', cursive; font-size: 2em; /* letter-spacing: 1px; */ }
+
+.nav-icons { font-size: 22px; transition: all 0.3s }
+
+.nav-icons:hover { color: #28a745 !important; }
+
+#logout { border-bottom: 1px solid transparent; }
+
+#logout:hover { border-bottom: 1px solid white; }

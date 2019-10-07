@@ -1,9 +1,46 @@
 <% include ./partials/header %>
-
-<h1>
-	Page not found
-</h1>
-
-<a class="btn btn-dark" href="/app">Return to App</a>
+		<link rel="stylesheet" href="../stylesheets/error.css">
+	</head>
+<body>
+	
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+	  <div class="d-none d-md-block">
+		  <ul class="navbar-nav mr-auto">
+			  <li class="nav-item">
+				  <a href="https://github.com/JapmanN" class="text-white mr-3" target="_blank"><i class="fab fa-github nav-icons"></i></a>
+				  <a href="https://www.linkedin.com/in/japman-nagra-464b7116a/" class="text-white" target="_blank"><i class="fab fa-linkedin nav-icons"></i></a>
+			  </li>
+		  </ul>
+	  </div>
+	  
+	  <span class="navbar-brand mx-auto text-light nav-text">
+		  Ready to <a href="/app" class="text-white font-weight-bold">Play?</a>
+	  </span>
+	  
+	  <div class="d-none d-md-block">
+		  <ul class="navbar-nav ml-auto">
+			  <li class="nav-item">
+				  <a class="nav-link text-white" href="https://accounts.spotify.com/en/status" id="logout">Log in/out</a>
+			  </li>
+		  </ul>
+	  </div>
+	</div>
+</nav>
+	
+	<div class="container">
+		<div class="row d-flex align-items-center text-center text-lg-left">
+			<div class="col-lg-6 my-4 mt-lg-0">
+				<h1 class="display-2 font-weight-bold text-dark"><span class="d-none d-md-inline">Error</span> 404</h1>
+				<h4 class="font-weight-bold text-dark">
+					The page you are looking for could not be found. Double-check if the URL has been typed correctly and try again.
+				</h4>
+				<a class="btn btn-dark rounded-pill mt-3 px-3 py-2" href="/"><i class="fas fa-home mr-2"></i>  Return home?</a>
+			</div>
+			<div class="col-lg-6 mt-3 mx-auto">
+				<img class="img-fluid" src="./assets/error.svg">
+			</div>
+		</div>
+	</div>
 
 <% include ./partials/footer %>
