@@ -55,14 +55,11 @@ app.get('/callback', (req, res) => {
 
 app.get('/app', (req, res) => {
 	spotifyApi.getMe().then(function(user) {
-		spotifyApi.getFollowedArtists().then(function(followedArtists) {
-			spotifyApi.getMySavedTracks({limit: 50}).then(function(savedTracks) {
-				res.render("index", {user: user, followedArtists: followedArtists, savedTracks: savedTracks});
-			}, function(err) {
-				console.log('Something went wrong!', err);
-			});
+		var randomNum = Math.floor(Math.random() * 99);
+		spotifyApi.getMySavedTracks({limit: 50, offset: randomNum}).then(function(savedTracks) {
+			res.render("index", {user: user, followedArtists: followedArtists, savedTracks: savedTracks});
 		}, function(err) {
-			console.log('Something went wrong!', err);
+				console.log('Something went wrong!', err);
 		});
 	}, function(err) {
 		res.redirect("/login");
@@ -71,11 +68,7 @@ app.get('/app', (req, res) => {
 
 
 app.get('/more-info', (req, res) => {
-	spotifyApi.getMe().then(function(user) {
-		res.render("moreInfo", {user: user});
-	}, function(err) {
-		console.log('Something went wrong!', err);
-	});
+	res.render("moreInfo");
 });
 
 

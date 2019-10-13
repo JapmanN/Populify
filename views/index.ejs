@@ -2,8 +2,16 @@
 		<link rel="stylesheet" href="../stylesheets/index.css">
 	</head>
 <body>
-	
-<nav class="navbar navbar-expand-lg fixed-top">
+
+<% if(savedTracks.body.items.length >= 50) { %>	
+	<!-- <div class="jumbotron mb-0">
+		<div class="container">
+			<h1 class="display-4 text-dark font-weight-bold text-center">Which song is currently more popular?</h1>
+		</div>
+	</div> -->
+
+
+<nav class="navbar navbar-expand-lg sticky-top">
   <div class="container">
 	  <div>
 		  <ul class="navbar-nav mr-auto">
@@ -28,8 +36,9 @@
 	</div>
 </nav>
 
+	
 <div class="container mt-5">
-	<div class="jumbotron text-center rounded-lg">
+	<div class="jumbotron text-center rounded-lg" style="background: black !important;">
 		<div id="showScoreHtml" class="d-none">
 			<h1 class="option" id="H1Score">Your Score is <span id="scoreWhileUserIsPlaying" class="text-success"><%= %></span></h1>
 			<button onclick="location.reload();" id="playAgain" class="btn btn-dark btn-lg rounded-lg d-none mt-2"><i class="fa fa-redo-alt mr-2"></i>   Try Again</button>
@@ -50,7 +59,7 @@
 	<div class="row">
 		<div class="col-lg-6 text-center">
 			<center>
-				<% for (var i = Math.floor(Math.random() * 50), j = 0; j < 1; j++) { %>
+				<% for (var i = Math.floor(Math.random() *  savedTracks.body.items.length), j = 0; j < 1; j++) { %>
 				<div class="card bg-none border-0" style="width: 30rem;">	
 					<img src="<%= savedTracks.body.items[i].track.album.images[0].url %>" class="card-img-top">
 					<div class="card-body">
@@ -64,7 +73,7 @@
 		
 		<div class="col-lg-6">
 			<center>
-				<% for (var k = Math.floor(Math.random() * 50), m = 0; m < 1; m++) { %>
+				<% for (var k = Math.floor(Math.random() *  savedTracks.body.items.length), m = 0; m < 1; m++) { %>
 				<div class="card bg-none border-0" style="width: 30rem;">
 					<img src="<%= savedTracks.body.items[k].track.album.images[0].url %>" class="card-img-top">
 					<div class="card-body">
@@ -206,6 +215,10 @@
   </div>
 </div>
 
+<% } else { %>
+	<h1>You need to have atleast 50 songs.</h1>
+<% } %>
+	
 <% include ./partials/footer %>
 
 <!-- savedTracks.body.items[i].track.name -->

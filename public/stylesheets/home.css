@@ -10,6 +10,14 @@ nav {
 	background: #000 !important; 
 }
 
+/* ================ */
+/* CUSTOM CONTAINER */
+/* ================ */
+@media (min-width: 768px) {
+    .container{
+        max-width: 95%;
+    }
+}
 
 /* =============== */
 /* NAVBAR STYLING */

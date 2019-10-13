@@ -1,24 +1,26 @@
 /* ==================== */
 /* GENERAL TAGS STYLING */
 /* ==================== */
-body { background: #232323; color: white; font-family: 'Poppins', 'Londrina Solid', cursive; font-weight: lighter; }
+body {
+	background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+	color: white;
+	font-family: 'Poppins', 'Londrina Solid', cursive;
+	font-weight: lighter;
+}
 
 nav { background: #000 !important; }
 
-img { height: 450px; border-radius: 30px !important; }
 
 /* =============== */
 /* CLASSES STYLING */
 /* =============== */
-.jumbotron { background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%); }
+.jumbotron { background: #232323; border-radius: 30px; }
+
+.card { background: #343434; border-radius: 30px; }
 
 .nav-text { font-size: 25px !important; }
 
 .navbar-brand { font-family: 'Poppins', 'Londrina Solid', cursive; font-size: 2em; /* letter-spacing: 1px; */ }
-
-.option { font-size: 3em; font-weight: 600;}
-
-.bg-none { background: none;}
 
 .nav-icons { font-size: 22px; transition: all 0.3s }
 
@@ -38,4 +40,3 @@ img { height: 450px; border-radius: 30px !important; }
 /* ============ */
 /* ID'S STYLING */
 /* ============ */
-#title { font-family: 'Poppins', sans-serif; font-weight: bold; color: #28a745 !important; }

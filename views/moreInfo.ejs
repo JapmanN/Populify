@@ -1,42 +1,71 @@
 <% include ./partials/header %>
 
-		<link rel="stylesheet" href="../stylesheets/index.css">
+		<link rel="stylesheet" href="../stylesheets/moreInfo.css">
 	</head>
 <body>
 
-<nav class="navbar navbar-expand-lg fixed-top">
+<nav class="navbar navbar-expand-lg">
   <div class="container">
-	  <div>
+	  <div class="d-none d-md-block">
 		  <ul class="navbar-nav mr-auto">
 			  <li class="nav-item">
 				  <a href="https://github.com/JapmanN" class="text-white mr-3" target="_blank"><i class="fab fa-github nav-icons"></i></a>
 				  <a href="https://www.linkedin.com/in/japman-nagra-464b7116a/" class="text-white" target="_blank"><i class="fab fa-linkedin nav-icons"></i></a>
+				  <a href="/" class="text-white ml-3" target="_blank"><i class="fas fa-home nav-icons"></i></a>
 			  </li>
 		  </ul>
 	  </div>
 	  
 	  <span class="navbar-brand mx-auto text-light nav-text">
-		  Logged in as <span href="#" class="text-white font-weight-bold"><%= user.body.display_name %></span>
+		  Ready to <a href="/app" class="text-white font-weight-bold">Play?</a>
 	  </span>
 	  
-	  <div>
+	  <div class="d-none d-md-block">
 		  <ul class="navbar-nav ml-auto">
 			  <li class="nav-item">
-				  <a class="nav-link text-white" href="https://accounts.spotify.com/en/status">Logout</a>
+				  <a class="nav-link text-white" href="https://accounts.spotify.com/en/status" id="logout">
+					  <i class="fab fa-youtube text-danger"></i> Tutorial
+				  </a>
 			  </li>
 		  </ul>
 	  </div>
 	</div>
 </nav>
-
-<div class="container mt-5">
-	<div class="jumbotron">
-		<h1 class="display-4 font-weight-bold">Spotify-Popularity Game</h1>
-		<p class="lead"></p>
-		<hr class="my-4">
-		<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-		<a class="btn btn-success btn-lg rounded-pill" href="/app" role="button">Ready to play? Click me!</a>
+	
+	<div class="container mt-5">
+		<div class="jumbotron">
+			<h1 class="display-4 font-weight-bold">Name of Application</h1>
+			<p class="lead">
+				A Web Application powered by the  Spotify Web API that displays two tracks from your "Liked Songs", and makes you guess which one is more popular based off of current popularity. Achieve the highest score you can and share it to see if your friends can beat it!
+			</p>
+			<p class="lead">
+				<a class="btn btn-success" href="#" role="button">Play game</a>
+			</p>
+		</div>
 	</div>
-</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="card text-white mb-3 mx-auto">
+					<div class="card-header text-center">How do I play with new songs?</div>
+					<div class="card-body">
+						<!-- <h5 class="card-title">Primary card title</h5> -->
+						<p class="card-text">NAME uses songs from your Spotify "Liked Songs" playlist. To play with new songs, add more tracks to your "Liked Songs" playlist by clicking the heart button. The app will automatically include your newly added songs the next time you play!</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-6">
+				<div class="card text-white mb-3 mx-auto">
+					<div class="card-header text-center">Contact</div>
+					<div class="card-body">
+						<!-- <h5 class="card-title">Primary card title</h5> -->
+						<p class="card-text">Have any questions, comments, or concerns? You can contact me via email or by messaging me on LinkedIn. If you're having a problem or any difficulties with the app, click here to file a support ticket and I'll be sure to look into it!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 <% include ./partials/footer %>
