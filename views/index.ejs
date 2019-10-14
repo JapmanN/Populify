@@ -10,61 +10,61 @@
 		</div>
 	</div> -->
 
+<div class="header">
+	<nav class="navbar navbar-expand-lg">
+	  <div class="container">
+		  <div class="d-none d-md-block">
+			  <ul class="navbar-nav mr-auto">
+				  <li class="nav-item">
+					  <a href="https://github.com/JapmanN" class="text-white mr-3" target="_blank"><i class="fab fa-github nav-icons"></i></a>
+					  <a href="https://www.linkedin.com/in/japman-nagra-464b7116a/" class="text-white" target="_blank"><i class="fab fa-linkedin nav-icons"></i></a>
+				  </li>
+			  </ul>
+		  </div>
 
-<nav class="navbar navbar-expand-lg sticky-top">
-  <div class="container">
-	  <div>
-		  <ul class="navbar-nav mr-auto">
-			  <li class="nav-item">
-				  <a href="https://github.com/JapmanN" class="text-white mr-3" target="_blank"><i class="fab fa-github nav-icons"></i></a>
-				  <a href="https://www.linkedin.com/in/japman-nagra-464b7116a/" class="text-white" target="_blank"><i class="fab fa-linkedin nav-icons"></i></a>
-			  </li>
-		  </ul>
-	  </div>
-	  
-	  <span class="navbar-brand mx-auto text-light nav-text">
-		  Logged in as <span href="#" class="text-white font-weight-bold"><%= user.body.display_name %></span>
-	  </span>
-	  
-	  <div>
-		  <ul class="navbar-nav ml-auto">
-			  <li class="nav-item">
-				  <a class="nav-link text-white" href="https://accounts.spotify.com/en/status" id="logout">Logout</a>
-			  </li>
-		  </ul>
-	  </div>
-	</div>
-</nav>
+		  <span class="navbar-brand mx-auto text-light nav-text">
+			  Logged in as <span href="#" class="text-white font-weight-bold"><%= user.body.display_name %></span>
+		  </span>
+
+		  <div class="d-none d-md-block">
+			  <ul class="navbar-nav ml-auto">
+				  <li class="nav-item">
+					  <a class="nav-link text-white" href="https://accounts.spotify.com/en/status" id="logout">Logout</a>
+				  </li>
+			  </ul>
+		  </div>
+		</div>
+	</nav>
 
 	
-<div class="container mt-5">
-	<div class="jumbotron text-center rounded-lg" style="background: black !important;">
-		<div id="showScoreHtml" class="d-none">
-			<h1 class="option" id="H1Score">Your Score is <span id="scoreWhileUserIsPlaying" class="text-success"><%= %></span></h1>
-			<button onclick="location.reload();" id="playAgain" class="btn btn-dark btn-lg rounded-lg d-none mt-2"><i class="fa fa-redo-alt mr-2"></i>   Try Again</button>
+
+	<div class="jumbotron">
+		<div class="container mt-2">
+			<div id="showScoreHtml" class="text-center d-none">
+				<h1 class="option" id="H1Score">Current Score: <span id="scoreWhileUserIsPlaying" class="text-white"><%= %></span></h1>
+				<button onclick="location.reload();" id="playAgain" class="btn btn-dark btn-lg rounded-lg d-none mt-2"><i class="fa fa-redo-alt mr-2"></i>   Try Again</button>
+			</div>
+			<div id="welcome" class="d-none">
+				<h1 class="display-2">
+					<span id="title">Populify</span>
+				</h1>
+				<h4>Click the arrow under the song that you think is currently more popular</h4>
+				<a class="btn btn-dark mt-2 btn-lg rounded-lg" href="/more-info" role="button">More Information</a>
+			</div>
 		</div>
-		<div id="welcome" class="d-none">
-			<h1 class="text-center">Welcome to the</h1>
-			<h1 class="display-4">
-				<i class="fas fa-music text-secondary mr-3"></i>
-				<span id="title">Spotify-Popularity-Game</span>
-				<i class="fas fa-music text-secondary ml-3"></i>
-			</h1>
-			<a class="btn btn-dark mt-2 btn-lg rounded-lg" href="/more-info" role="button">More Information</a>
-		</div>
-	</div>
-</div>	
+	</div>	
+</div>
 
 <div class="container" id="theBody">
 	<div class="row">
 		<div class="col-lg-6 text-center">
 			<center>
 				<% for (var i = Math.floor(Math.random() *  savedTracks.body.items.length), j = 0; j < 1; j++) { %>
-				<div class="card bg-none border-0" style="width: 30rem;">	
+				<div class="card bg-none border-0">	
 					<img src="<%= savedTracks.body.items[i].track.album.images[0].url %>" class="card-img-top">
 					<div class="card-body">
 						<h1 class="card-title option choice_one"><%= savedTracks.body.items[i].track.name %></h1>
-						<button class="btn btn-outline-success btn-block rounded-pill choice_one_btn"><i class="fas fa-caret-up fa-3x"></i></button>
+						<button class="btn btn-orange btn-block rounded-pill choice_one_btn"><i class="fas fa-caret-up fa-3x text-orange"></i></button>
 					</div>
 				</div>
 				<% } %>
@@ -74,11 +74,11 @@
 		<div class="col-lg-6">
 			<center>
 				<% for (var k = Math.floor(Math.random() *  savedTracks.body.items.length), m = 0; m < 1; m++) { %>
-				<div class="card bg-none border-0" style="width: 30rem;">
+				<div class="card bg-none border-0">
 					<img src="<%= savedTracks.body.items[k].track.album.images[0].url %>" class="card-img-top">
 					<div class="card-body">
 						<h1 class="card-title option choice_two"><%= savedTracks.body.items[k].track.name %></h1>
-						<button class="btn btn-outline-success btn-block rounded-pill choice_two_btn"><i class="fas fa-caret-up fa-3x"></i></button>
+						<button class="btn btn-orange btn-block rounded-pill choice_two_btn"><i class="fas fa-caret-up fa-3x text-orange"></i></button>
 					</div>
 				</div>
 				<% } %>

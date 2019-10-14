@@ -34,12 +34,12 @@
 	
 	<div class="container mt-5">
 		<div class="jumbotron">
-			<h1 class="display-4 font-weight-bold">Name of Application</h1>
+			<h1 class="display-4"><span class="d-none d-md-inline">More about</span> <span class="font-weight-bold">Populify</span></h1>
 			<p class="lead">
 				A Web Application powered by the  Spotify Web API that displays two tracks from your "Liked Songs", and makes you guess which one is more popular based off of current popularity. Achieve the highest score you can and share it to see if your friends can beat it!
 			</p>
 			<p class="lead">
-				<a class="btn btn-success" href="#" role="button">Play game</a>
+				<a class="btn btn-success" href="/app" role="button">Play game</a>
 			</p>
 		</div>
 	</div>
@@ -48,20 +48,68 @@
 		<div class="row">
 			<div class="col-lg-6">
 				<div class="card text-white mb-3 mx-auto">
-					<div class="card-header text-center">How do I play with new songs?</div>
-					<div class="card-body">
-						<!-- <h5 class="card-title">Primary card title</h5> -->
-						<p class="card-text">NAME uses songs from your Spotify "Liked Songs" playlist. To play with new songs, add more tracks to your "Liked Songs" playlist by clicking the heart button. The app will automatically include your newly added songs the next time you play!</p>
+					<div class="card-header text-center" type="button" data-toggle="collapse" data-target="#newSongs" aria-expanded="false" aria-controls="newSongs">How do I play with new songs?</div>
+					<div class="collapse multi-collapse" id="newSongs">
+						<div class="card-body">
+							<!-- <h5 class="card-title">Primary card title</h5> -->
+							<p class="card-text">Populify uses songs from your Spotify "Liked Songs" playlist. To play with new songs, add more tracks to your "Liked Songs" playlist by clicking the heart button. The app will automatically include your newly added songs the next time you play!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="col-lg-6">
+				<div class="card text-white mb-3 mx-auto">
+					<div class="card-header text-center" type="button" data-toggle="collapse" data-target="#contact" aria-expanded="false" aria-controls="contact">Contact</div>
+					<div class="collapse multi-collapse" id="contact">
+						<div class="card-body">
+							<!-- <h5 class="card-title">Primary card title</h5> -->
+							<p class="card-text">Have any questions, comments, or concerns? You can contact me via email or by messaging me on LinkedIn. If you're having a problem or any difficulties with the app, click here to file a support ticket and I'll be sure to look into it!</p>
+						</div>
 					</div>
 				</div>
 			</div>
 			
 			<div class="col-lg-6">
 				<div class="card text-white mb-3 mx-auto">
-					<div class="card-header text-center">Contact</div>
-					<div class="card-body">
-						<!-- <h5 class="card-title">Primary card title</h5> -->
-						<p class="card-text">Have any questions, comments, or concerns? You can contact me via email or by messaging me on LinkedIn. If you're having a problem or any difficulties with the app, click here to file a support ticket and I'll be sure to look into it!</p>
+					<div class="card-header text-center" type="button" data-toggle="collapse" data-target="#techUsed" aria-expanded="false" aria-controls="techUsed">Technologies used to build this project</div>
+					<div class="collapse multi-collapse" id="techUsed">
+						<div class="card-body row">
+							<div class="col-lg-4">
+								<ul>
+									<li>HTML</li>
+									<li>CSS</li>
+									<li>JavaScript</li>
+								</ul>
+							</div>
+							<div class="col-lg-4">
+								<ul>
+									<li>Node.js</li>
+									<li>Express.js</li>
+									<li>EJS</li>
+								</ul>
+							</div>
+							<div class="col-lg-4">
+								<ul>
+									<li>Bootstrap</li>
+									<li>Spotify API</li>
+									<li>Heroku</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-6">
+				<div class="card text-white mb-3 mx-auto">
+					<div class="card-header text-center" type="button" data-toggle="collapse" data-target="#spotifyAccess" aria-expanded="false" aria-controls="spotifyAccess">Spotify Access and Scopes</div>
+					<div class="collapse multi-collapse" id="spotifyAccess">
+						<div class="card-body">
+							<!-- <h5 class="card-title">Primary card title</h5> -->
+							<p class="card-text">Populify uses [Authorization Code Flow] for user authorization. Scopes are what allow us to access your information.</p>
+						</div>
 					</div>
 				</div>
 			</div>

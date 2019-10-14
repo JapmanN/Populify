@@ -1,5 +1,5 @@
 body {
-	background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+	background-image: linear-gradient(to left, #fc6076 0%, #ff9a44 100%);
 	color: white;
 	font-family: 'Poppins', 'Londrina Solid', cursive;
 	font-weight: lighter;
@@ -26,9 +26,9 @@ nav {
 
 .navbar-brand { font-family: 'Poppins', 'Londrina Solid', cursive; font-size: 2em; /* letter-spacing: 1px; */ }
 
-.nav-icons { font-size: 22px; transition: all 0.3s }
+.nav-icons { font-size: 22px; transition: all 0.4s }
 
-.nav-icons:hover { color: #28a745 !important; }
+.nav-icons:hover { color: gray !important; }
 
 #logout { border-bottom: 1px solid transparent; }
 

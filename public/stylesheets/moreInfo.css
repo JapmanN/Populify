@@ -2,7 +2,7 @@
 /* GENERAL TAGS STYLING */
 /* ==================== */
 body {
-	background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+	background-image: linear-gradient(to left, #fc6076 0%, #ff9a44 100%);
 	color: white;
 	font-family: 'Poppins', 'Londrina Solid', cursive;
 	font-weight: lighter;
@@ -16,7 +16,7 @@ nav { background: #000 !important; }
 /* =============== */
 .jumbotron { background: #232323; border-radius: 30px; }
 
-.card { background: #343434; border-radius: 30px; }
+.card { background: #343434; border-radius: 25px; }
 
 .nav-text { font-size: 25px !important; }
 

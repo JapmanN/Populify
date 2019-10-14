@@ -1,32 +1,36 @@
 /* ==================== */
 /* GENERAL TAGS STYLING */
 /* ==================== */
-body { background: #232323; color: white; font-family: 'Poppins', 'Londrina Solid', cursive; font-weight: lighter; }
+body { background: #222; color: white; font-family: 'Poppins', 'Londrina Solid', cursive; font-weight: lighter; }
 
-nav { background: #000 !important; }
+nav { background: none !important; }
 
 img { height: 450px; border-radius: 30px !important; }
 
 /* =============== */
 /* CLASSES STYLING */
 /* =============== */
-.jumbotron { background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%); }
+.header { background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%); }
+
+.jumbotron { background: none; }
 
 .nav-text { font-size: 25px !important; }
 
 .navbar-brand { font-family: 'Poppins', 'Londrina Solid', cursive; font-size: 2em; /* letter-spacing: 1px; */ }
 
-.option { font-size: 3em; font-weight: 600;}
+.option { font-size: 3em; font-weight: 600; color: white; }
 
 .bg-none { background: none;}
 
-.nav-icons { font-size: 22px; transition: all 0.3s }
+.nav-icons { font-size: 22px; transition: all 0.4s }
 
-.nav-icons:hover { color: #28a745 !important; }
+.nav-icons:hover { color: #232323 !important; }
 
 #logout { border-bottom: 1px solid transparent; }
 
 #logout:hover { border-bottom: 1px solid white; }
+
+.text-orange { color: #ff9a44; }
 
 /* =============== */
 /* BUTTONS STYLING */
@@ -35,7 +39,26 @@ img { height: 450px; border-radius: 30px !important; }
 
 .btn-dark:hover { transform: scale(0.9); }
 
+.btn-orange { transition: all 0.3s; border: 3px solid #ff9a44; }
+
+.btn-orange:hover { border: 3px solid #fc6076; transform: scale(1.1); }
+
 /* ============ */
 /* ID'S STYLING */
 /* ============ */
-#title { font-family: 'Poppins', sans-serif; font-weight: bold; color: #28a745 !important; }
+#title { font-family: 'Poppins', sans-serif; font-weight: bold; color: white !important; text-align: right; }
+
+
+/* ====================================== */
+/* MOBILE OPTIMIZATION WITH MEDIA QUERIES */
+/* ====================================== */
+@media (min-width: 768px) {
+    .card { width: 30rem; }
+}
+
+@media (max-width: 768px) {
+    .card { width: unset; }
+	img {height: 350px; }
+	.option { font-size: 2rem; }
+	.nav-text { font-size: 22px !important; }
+}
