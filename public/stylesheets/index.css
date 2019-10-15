@@ -24,7 +24,7 @@ img { height: 450px; border-radius: 30px !important; }
 
 .nav-icons { font-size: 22px; transition: all 0.4s }
 
-.nav-icons:hover { color: #232323 !important; }
+.nav-icons:hover { color: #e8e8e8 !important; transform: scale(1.1); }
 
 #logout { border-bottom: 1px solid transparent; }
 
@@ -52,10 +52,26 @@ img { height: 450px; border-radius: 30px !important; }
 /* ====================================== */
 /* MOBILE OPTIMIZATION WITH MEDIA QUERIES */
 /* ====================================== */
+
+/*  LARGE DESKTOP VIEW */
 @media (min-width: 768px) {
     .card { width: 30rem; }
 }
 
+/* LAPTOP VIEW */
+@media screen and (min-width: 992px) and (max-width: 1198px) {
+	.card { width: 28rem; }
+	.option { font-size: 2rem; }
+}
+
+/* TABLET VIEW */
+@media screen and (min-width: 769px) and (max-width: 992px) {
+	.card { width: 20rem; }
+	img { height: 20rem; }
+	.option { font-size: 2rem; }
+}
+
+/* MOBILE VIEW */
 @media (max-width: 768px) {
     .card { width: unset; }
 	img {height: 350px; }

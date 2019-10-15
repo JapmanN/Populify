@@ -45,7 +45,7 @@
 				<button onclick="location.reload();" id="playAgain" class="btn btn-dark btn-lg rounded-lg d-none mt-2"><i class="fa fa-redo-alt mr-2"></i>   Try Again</button>
 			</div>
 			<div id="welcome" class="d-none">
-				<h1 class="display-2">
+				<h1 class="display-3">
 					<span id="title">Populify</span>
 				</h1>
 				<h4>Click the arrow under the song that you think is currently more popular</h4>
@@ -57,7 +57,7 @@
 
 <div class="container" id="theBody">
 	<div class="row">
-		<div class="col-lg-6 text-center">
+		<div class="col-lg-6 col-md-6 text-center">
 			<center>
 				<% for (var i = Math.floor(Math.random() *  savedTracks.body.items.length), j = 0; j < 1; j++) { %>
 				<div class="card bg-none border-0">	
@@ -71,7 +71,7 @@
 			</center>
 		</div>
 		
-		<div class="col-lg-6">
+		<div class="col-lg-6 col-md-6">
 			<center>
 				<% for (var k = Math.floor(Math.random() *  savedTracks.body.items.length), m = 0; m < 1; m++) { %>
 				<div class="card bg-none border-0">
@@ -164,7 +164,7 @@
 	function ifUserGuessesWrong() {
 		// Show the button to play again and show the FINAL SCORE
 		$("button#playAgain").removeClass("d-none");
-		$("h1#H1Score").html("Your Final Score is <span id='scoreWhileUserIsPlaying' class='text-success'>" +  score + "</span");
+		$("h1#H1Score").html("Your Final Score is <span id='scoreWhileUserIsPlaying'>" +  score + "</span");
 		
 		// Set the SCORE back to 0 and store it
 		score = 0;
@@ -216,7 +216,9 @@
 </div>
 
 <% } else { %>
-	<h1>You need to have atleast 50 songs.</h1>
+	<div class="header">
+		<h1 class="text-center font-weight-bold">You need to have atleast 50 songs.</h1>
+	</div>
 <% } %>
 	
 <% include ./partials/footer %>

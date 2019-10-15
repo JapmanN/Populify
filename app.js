@@ -54,9 +54,10 @@ app.get('/callback', (req, res) => {
 });
 
 app.get('/app', (req, res) => {
+	var randomNum = Math.floor(Math.random() * 116);
 	spotifyApi.getMe().then(function(user) {
-		var randomNum = Math.floor(Math.random() * 1);
-		spotifyApi.getMySavedTracks({limit: 50, offset: 1150}).then(function(savedTracks) {
+		spotifyApi.getMySavedTracks({limit: 50, offset: randomNum}).then(function(savedTracks) {
+			console.log(randomNum);
 			res.render("index", {user: user, savedTracks: savedTracks});
 		}, function(err) {
 				console.log('Something went wrong!', err);
