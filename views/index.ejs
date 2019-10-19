@@ -89,6 +89,8 @@
 
 <script>
 	var score = localStorage.getItem("theScore");
+	var first_song_name = $(".choice_one").html();
+	var second_song_name = $(".choice_two").html();
 		
 	if (score == null || score == 0) {
 		score = 0;
@@ -98,6 +100,10 @@
 		$("div#showScoreHtml").removeClass("d-none");
 		$("span#scoreWhileUserIsPlaying").html(score);
 	}
+	
+	if(first_song_name == second_song_name) {
+		location.reload();
+	} else {
 	
 	$("button.choice_two_btn").on("click", function() {
 		var first_song = <%= savedTracks.body.items[i].track.popularity %>;
@@ -177,6 +183,7 @@
 			$('#wrongModal').modal('hide');
 			$("#theBody").addClass("d-none");
 		}, 1000);
+	}
 	}
 </script>
 

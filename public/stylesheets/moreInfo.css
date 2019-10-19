@@ -8,13 +8,13 @@ body {
 	font-weight: lighter;
 }
 
-nav { background: #000 !important; }
+nav { background: #232323 !important; }
 
 
 /* =============== */
 /* CLASSES STYLING */
 /* =============== */
-.jumbotron { background: #232323; border-radius: 30px; }
+.jumbotron { background: none; border-radius: 30px; }
 
 .card { background: #343434; border-radius: 25px; }
 
