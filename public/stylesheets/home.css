@@ -34,6 +34,7 @@ nav {
 
 #logout:hover { border-bottom: 1px solid white; }
 
+.bg-none { background: none !important; }
 
 /* =============== */
 /* CONTENT OF PAGE */

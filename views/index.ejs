@@ -1,9 +1,10 @@
 <% include ./partials/header %>
 		<link rel="stylesheet" href="../stylesheets/index.css">
 	</head>
+<% if(savedTracks.body.items.length >= 50) { %>	
 <body>
 
-<% if(savedTracks.body.items.length >= 50) { %>	
+
 	<!-- <div class="jumbotron mb-0">
 		<div class="container">
 			<h1 class="display-4 text-dark font-weight-bold text-center">Which song is currently more popular?</h1>
@@ -49,7 +50,7 @@
 					<span id="title">Populify</span>
 				</h1>
 				<h4>Click the arrow under the song that you think is currently more popular</h4>
-				<a class="btn btn-dark mt-2 btn-lg rounded-lg" href="/more-info" role="button">More Information</a>
+				<a class="btn btn-dark mt-2 btn-lg rounded-lg" href="/info" role="button">More Information</a>
 			</div>
 		</div>
 	</div>	
@@ -104,86 +105,85 @@
 	if(first_song_name == second_song_name) {
 		location.reload();
 	} else {
-	
-	$("button.choice_two_btn").on("click", function() {
-		var first_song = <%= savedTracks.body.items[i].track.popularity %>;
-		var second_song = <%= savedTracks.body.items[k].track.popularity %>;
-		if(second_song > first_song) {
-			ifUserGuessesRight();
-		} else if(second_song == first_song) {
-			ifSamePopularity();
-		} else {
-			ifUserGuessesWrong();
+		$("button.choice_two_btn").on("click", function() {
+			var first_song = <%= savedTracks.body.items[i].track.popularity %>;
+			var second_song = <%= savedTracks.body.items[k].track.popularity %>;
+			if(second_song > first_song) {
+				ifUserGuessesRight();
+			} else if(second_song == first_song) {
+				ifSamePopularity();
+			} else {
+				ifUserGuessesWrong();
+			}
+		});
+
+		$("button.choice_one_btn").on("click", function() {
+			var first_song = <%= savedTracks.body.items[i].track.popularity %>;
+			var second_song = <%= savedTracks.body.items[k].track.popularity %>;
+			if(first_song > second_song) {
+				ifUserGuessesRight();
+			} else if(second_song == first_song) {
+				ifSamePopularity();
+			} else {
+				ifUserGuessesWrong();
+			}
+		});
+
+		function ifUserGuessesRight() {
+			// Update Score
+			score++;
+			localStorage.setItem("theScore", score);
+
+			// Show CORRECT modal
+			$('#correctModal').modal('show');
+
+			// Hide the CORRECT modal after 1 second
+			setTimeout(function() {
+				$('#correctModal').modal('hide');
+			}, 1000);
+
+			// Start refreshing the page after 800 milliseconds
+			setTimeout(function() {
+				location.reload();
+			}, 800);
 		}
-	});
 
-	$("button.choice_one_btn").on("click", function() {
-		var first_song = <%= savedTracks.body.items[i].track.popularity %>;
-		var second_song = <%= savedTracks.body.items[k].track.popularity %>;
-		if(first_song > second_song) {
-			ifUserGuessesRight();
-		} else if(second_song == first_song) {
-			ifSamePopularity();
-		} else {
-			ifUserGuessesWrong();
+		function ifSamePopularity() {
+			// Update Score
+			score++;
+			localStorage.setItem("theScore", score);
+
+			// Show EQUAL modal
+			$('#equalModal').modal('show');
+
+			// Hide the EQUAL modal after 1 second
+			setTimeout(function() {
+				$('#equalModal').modal('hide');
+			}, 1500);
+
+			// Start refreshing the page after 800 milliseconds
+			setTimeout(function() {
+				location.reload();
+			}, 1250);
 		}
-	});
-	
-	function ifUserGuessesRight() {
-		// Update Score
-		score++;
-		localStorage.setItem("theScore", score);
-		
-		// Show CORRECT modal
-		$('#correctModal').modal('show');
 
-		// Hide the CORRECT modal after 1 second
-		setTimeout(function() {
-			$('#correctModal').modal('hide');
-		}, 1000);
-		
-		// Start refreshing the page after 800 milliseconds
-		setTimeout(function() {
-			location.reload();
-		}, 800);
-	}
-	
-	function ifSamePopularity() {
-		// Update Score
-		score++;
-		localStorage.setItem("theScore", score);
-		
-		// Show EQUAL modal
-		$('#equalModal').modal('show');
+		function ifUserGuessesWrong() {
+			// Show the button to play again and show the FINAL SCORE
+			$("button#playAgain").removeClass("d-none");
+			$("h1#H1Score").html("Your Final Score is <span id='scoreWhileUserIsPlaying'>" +  score + "</span");
 
-		// Hide the EQUAL modal after 1 second
-		setTimeout(function() {
-			$('#equalModal').modal('hide');
-		}, 1500);
-		
-		// Start refreshing the page after 800 milliseconds
-		setTimeout(function() {
-			location.reload();
-		}, 1250);
-	}
-	
-	function ifUserGuessesWrong() {
-		// Show the button to play again and show the FINAL SCORE
-		$("button#playAgain").removeClass("d-none");
-		$("h1#H1Score").html("Your Final Score is <span id='scoreWhileUserIsPlaying'>" +  score + "</span");
-		
-		// Set the SCORE back to 0 and store it
-		score = 0;
-		localStorage.setItem("theScore", score);
-		
-		// Show WRONG modal
-		$('#wrongModal').modal('show');
-		
-		setTimeout(function() {
-			$('#wrongModal').modal('hide');
-			$("#theBody").addClass("d-none");
-		}, 1000);
-	}
+			// Set the SCORE back to 0 and store it
+			score = 0;
+			localStorage.setItem("theScore", score);
+
+			// Show WRONG modal
+			$('#wrongModal').modal('show');
+
+			setTimeout(function() {
+				$('#wrongModal').modal('hide');
+				$("#theBody").addClass("d-none");
+			}, 1000);
+		}
 	}
 </script>
 
@@ -223,9 +223,19 @@
 </div>
 
 <% } else { %>
-	<div class="header">
-		<h1 class="text-center font-weight-bold">You need to have atleast 50 songs.</h1>
-	</div>
+	<body id="have50songsBg">
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container text-center">
+				<h1 class="display-1 font-weight-bold">Sorry!</h1>
+				<p class="lead" id="have50songsDesc">You need to have a minimum of 50 liked songs. Click <a href="/info">here</a> to find out how you can add songs to your Liked Songs playlist! Links to the Github source code and my LinkedIn profile are listed below.</p>
+				<div>
+					<a href="" class="btn btn-dark">Return home?</a>
+					<a href="" class="btn btn-dark">More Information</a>
+				</div>
+				<a href="https://github.com/JapmanN" class="text-white mr-5" target="_blank"><i class="fab fa-github fiftySongsLinks"></i></a>
+				<a href="https://www.linkedin.com/in/japman-nagra-464b7116a/" class="text-white" target="_blank"><i class="fab fa-linkedin fiftySongsLinks"></i></a>
+			</div>
+		</div>
 <% } %>
 	
 <% include ./partials/footer %>

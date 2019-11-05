@@ -32,6 +32,12 @@ img { height: 450px; border-radius: 30px !important; }
 
 .text-orange { color: #ff9a44; }
 
+.fiftySongsLinks { font-size: 63px; transition: all 0.4s; margin-top: 100px; }
+
+.fiftySongsLinks:hover {
+	transform: scale(1.4);
+}
+
 /* =============== */
 /* BUTTONS STYLING */
 /* =============== */
@@ -48,6 +54,19 @@ img { height: 450px; border-radius: 30px !important; }
 /* ============ */
 #title { font-family: 'Poppins', sans-serif; font-weight: bold; color: white !important; text-align: right; }
 
+#have50songsBg {
+	background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+	height: 100%;
+    margin: 0;
+	margin-top: 40px;
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+#have50songsDesc {
+	font-size: 26px;
+	text-align: center;
+}
 
 /* ====================================== */
 /* MOBILE OPTIMIZATION WITH MEDIA QUERIES */

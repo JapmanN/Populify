@@ -10,6 +10,15 @@ body {
 
 nav { background: #232323 !important; }
 
+/* ================ */
+/* CUSTOM CONTAINER */
+/* ================ */
+@media (min-width: 768px) {
+    .container-fluid{
+        max-width: 95%;
+    }
+}
+
 
 /* =============== */
 /* CLASSES STYLING */
@@ -22,13 +31,17 @@ nav { background: #232323 !important; }
 
 .navbar-brand { font-family: 'Poppins', 'Londrina Solid', cursive; font-size: 2em; /* letter-spacing: 1px; */ }
 
-.nav-icons { font-size: 22px; transition: all 0.3s }
+.nav-icons { font-size: 22px; transition: all 0.4s }
 
-.nav-icons:hover { color: #28a745 !important; }
+.nav-icons:hover { color: gray !important; }
 
 #logout { border-bottom: 1px solid transparent; }
 
 #logout:hover { border-bottom: 1px solid white; }
+
+.bg-none { background: none !important; }
+
+.borderless { border: 0 none; }
 
 /* =============== */
 /* BUTTONS STYLING */

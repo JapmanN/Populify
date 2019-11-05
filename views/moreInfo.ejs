@@ -5,13 +5,13 @@
 <body>
 
 <nav class="navbar navbar-expand-lg fixed-top">
-  <div class="container">
+  <div class="container-fluid">
 	  <div class="d-none d-md-block">
 		  <ul class="navbar-nav mr-auto">
 			  <li class="nav-item">
 				  <a href="https://github.com/JapmanN" class="text-white mr-3" target="_blank"><i class="fab fa-github nav-icons"></i></a>
 				  <a href="https://www.linkedin.com/in/japman-nagra-464b7116a/" class="text-white" target="_blank"><i class="fab fa-linkedin nav-icons"></i></a>
-				  <a href="/more-info" class="text-white ml-3" target="_blank"><i class="fas fa-info-circle nav-icons"></i></a>
+				  <a href="/" class="text-white ml-3"><i class="fas fa-home nav-icons"></i></a>
 			  </li>
 		  </ul>
 	  </div>
@@ -23,14 +23,36 @@
 	  <div class="d-none d-md-block">
 		  <ul class="navbar-nav ml-auto">
 			  <li class="nav-item">
-				  <a class="nav-link text-white" href="https://accounts.spotify.com/en/status" id="logout">
+				  <a class="nav-link text-white" id="logout">
+					<button type="button" class="text-white border-0 bg-none" data-toggle="modal" data-target="#tutorial">
 					  <i class="fab fa-youtube text-danger"></i> Tutorial
+					</button>
 				  </a>
 			  </li>
 		  </ul>
 	  </div>
 	</div>
 </nav>
+
+<!-- Modal for YOUTUBE tutorial -->
+<div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-labelledby="tutorial" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title">It's Coming Soon!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+		  Sorry, the video is not available yet. When published, it will be an in-depth tutorial on how to get started with the Spotify Web API!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 	
 	<div class="container mt-5 text-center">
 		<div class="jumbotron">
@@ -65,7 +87,7 @@
 					<div class="collapse multi-collapse" id="contact">
 						<div class="card-body">
 							<!-- <h5 class="card-title">Primary card title</h5> -->
-							<p class="card-text">Have any questions, comments, or concerns? You can contact me via email or by messaging me on LinkedIn. If you're having a problem or any difficulties with the app, click here to file a support ticket and I'll be sure to look into it!</p>
+							<p class="card-text">Have any questions, comments, or concerns? Shoot me an email at <a href="mailto:japmannagra20@gmail.com" class="pl-1">japmannagra20@gmail.com</a>, or message me on LinkedIn. I'll try to respond ASAP.</p>
 						</div>
 					</div>
 				</div>
@@ -76,25 +98,25 @@
 					<div class="card-header text-center" type="button" data-toggle="collapse" data-target="#techUsed" aria-expanded="false" aria-controls="techUsed">Technologies used</div>
 					<div class="collapse multi-collapse" id="techUsed">
 						<div class="card-body row">
-							<div class="col-lg-4">
-								<ul>
-									<li>HTML</li>
-									<li>CSS</li>
-									<li>JavaScript</li>
+							<div class="col-lg-4 col-md-4 col-sm-12 text-center text-md-left">
+								<ul class="list-group bg-none">
+									<li class="list-group-item bg-none p-2 p-md-1 borderless">HTML</li>
+									<li class="list-group-item bg-none p-2 p-md-1 borderless">CSS</li>
+									<li class="list-group-item bg-none p-2 p-md-1 borderless">JavaScript</li>
 								</ul>
 							</div>
-							<div class="col-lg-4">
-								<ul>
-									<li>Node.js</li>
-									<li>Express.js</li>
-									<li>EJS</li>
+							<div class="col-lg-4 col-md-4 col-sm-12 text-center text-md-left">
+								<ul class="list-group bg-none">
+									<li class="list-group-item bg-none p-2 p-md-1 borderless">Node.js</li>
+									<li class="list-group-item bg-none p-2 p-md-1 borderless">Express.js</li>
+									<li class="list-group-item bg-none p-2 p-md-1 borderless">EJS</li>
 								</ul>
 							</div>
-							<div class="col-lg-4">
-								<ul>
-									<li>Bootstrap</li>
-									<li>Spotify API</li>
-									<li>Heroku</li>
+							<div class="col-lg-4 col-md-4 col-sm-12 text-center text-md-left">
+								<ul class="list-group bg-none">
+									<li class="list-group-item bg-none p-2 p-md-1 borderless">Bootstrap</li>
+									<li class="list-group-item bg-none p-2 p-md-1 borderless">Spotify API</li>
+									<li class="list-group-item bg-none p-2 p-md-1 borderless">Heroku</li>
 								</ul>
 							</div>
 						</div>
@@ -108,7 +130,7 @@
 					<div class="collapse multi-collapse" id="spotifyAccess">
 						<div class="card-body">
 							<!-- <h5 class="card-title">Primary card title</h5> -->
-							<p class="card-text">Populify uses [Authorization Code Flow] for user authorization. Scopes are what allow us to access your information.</p>
+							<p class="card-text">Populify uses *Authorization Code Flow* for user authorization. The information Populify uses is accessed by the use of scopes. The scopes Populify uses are [user-read-private, user-read-email, user-follow-read, user-library-read]. These scopes allow access to your name, email, followed artists, and your library. For more information about scopes, click <a href="https://developer.spotify.com/documentation/general/guides/scopes/" target="_blank">here</a>.</p>
 						</div>
 					</div>
 				</div>

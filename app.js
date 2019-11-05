@@ -50,6 +50,7 @@ app.get('/callback', (req, res) => {
 		res.redirect('/app');
 	}, function(err) {
 		console.log('Something went wrong!', err);
+		res.redirect('/login');
 	});
 });
 
@@ -60,7 +61,7 @@ app.get('/app', (req, res) => {
 			// console.log(randomNum);
 			res.render("index", {user: user, savedTracks: savedTracks});
 		}, function(err) {
-				console.log('Something went wrong!', err);
+			console.log('Something went wrong!', err);
 		});
 	}, function(err) {
 		res.redirect("/login");
@@ -68,7 +69,7 @@ app.get('/app', (req, res) => {
 });
 
 
-app.get('/more-info', (req, res) => {
+app.get('/info', (req, res) => {
 	res.render("moreInfo");
 });
 

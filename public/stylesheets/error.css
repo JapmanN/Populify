@@ -30,3 +30,5 @@ nav { background: #000 !important; }
 #logout { border-bottom: 1px solid transparent; }
 
 #logout:hover { border-bottom: 1px solid white; }
+
+.bg-none { background: none !important; }
