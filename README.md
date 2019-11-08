@@ -1,12 +1,9 @@
-
-
 # Populify
 
 > A "Higher or Lower" game using your Spotify Library!
 
 Populify is a Web Application powered by the **Spotify Web API** that displays two tracks from your "Liked Songs", and makes you guess which one is more popular based off of current popularity. Achieve the highest score you can and share it to see if your friends can beat it! More information about the app is listed below:
 
-Click the link to [play the game](https://japman-web-projects.run.goorm.io/app)
 
 ## Project Screenshots
 
@@ -70,4 +67,5 @@ The application was built using the following technologies:
  - **Error Page** illustration from [undraw.co](https://undraw.co)
  - **Orange Gradient:** linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%) by [webgradients.com](https://webgradients.com/)
  - **Black Background:** #232323
- - **All Icons** from [Font Awesome](https://fontawesome.com/)
+ - **All Icons for website** from [Font Awesome](https://fontawesome.com/)
+ - **Logo Icons (musical note and arrows)** from [logomakr.com](https://logomakr.com/)
