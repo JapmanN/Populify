@@ -6,6 +6,7 @@
 
 Populify is a Web Application powered by the **Spotify Web API** that displays two tracks from your "Liked Songs", and makes you guess which one is more popular based off of current popularity. Achieve the highest score you can and share it to see if your friends can beat it! More information about the app is listed below:
 
+Click the link to [play the game](https://japman-web-projects.run.goorm.io/app)
 
 ## Project Screenshots
 
@@ -65,7 +66,7 @@ The application was built using the following technologies:
 
 ## Colours and Icons
 
- - **Index Page** illustration from [undraw.co](https://undraw.co)
+ - **Home Page** illustration from [undraw.co](https://undraw.co)
  - **Error Page** illustration from [undraw.co](https://undraw.co)
  - **Orange Gradient:** linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%) by [webgradients.com](https://webgradients.com/)
  - **Black Background:** #232323
