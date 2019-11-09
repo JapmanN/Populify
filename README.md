@@ -5,7 +5,7 @@
 Populify is a Web Application powered by the **Spotify Web API** that displays two tracks from your "Liked Songs", and makes you guess which one is more popular based off of current popularity. Achieve the highest score you can and share it to see if your friends can beat it! More information about the app is listed below:
 
 
-Click the link to [play the game](https://japman-web-projects.run.goorm.io/app)
+Click the link to [play the game](https://populify.herokuapp.com/)
 
 
 ## Project Screenshots
