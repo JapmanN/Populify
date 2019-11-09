@@ -86,4 +86,5 @@ app.get("*", (req, res) => {
 // ==============
 // SERVER STARTUP
 // ==============
-app.listen(3000, () => { console.log("server is running..."); });
+var port = process.env.PORT || 3000;
+app.listen(port, (req, res) => { console.log("server is running..."); });
