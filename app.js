@@ -5,6 +5,10 @@ const express       = require("express"),
 	  app           = express(),
 	  SpotifyWebApi = require('spotify-web-api-node');
 
+
+// ENVIRONMENT VARIABLE CONFIGURATION
+require('dotenv').config();
+
 // =================
 // APPLICATION SETUP
 // =================
@@ -16,10 +20,10 @@ app.use(express.static(__dirname + "/public"));
 // ================
 var spotifyApi = new SpotifyWebApi({
 	scopes: ['user-read-private', 'user-read-email', 'user-follow-read', 'user-library-read'],
-	redirectUri: 'REDIRECT_URI',
-	clientId: 'CLIENT_ID',
-	clientSecret: 'CLIENT_SECRET',
-	state: 'mySTATE'
+	redirectUri: process.env.REDIRECT_URI,
+	clientId: process.env.CLIENT_ID,
+	clientSecret: process.env.CLIENT_SECRET,
+	state: process.env.mySTATE
 });
 
 // =======================
