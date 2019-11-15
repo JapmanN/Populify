@@ -12,22 +12,22 @@ Click the link to [play the game](https://populify.herokuapp.com/)
 
 ***Home Screen:***
 
-![Home Screen of the Application](https://lh3.googleusercontent.com/v2BUSRB0hf8PwTdoVVAE-dS47tOqmAu3nj3fbUPUZXR_LwNFv9kOtdJfdwswTF6LG3T81sFNYgq8)
+![Home Screen of the Application](https://github.com/JapmanN/Populify/blob/master/public/assets/HomeScreenshot.png?raw=true)
 
 
 ***Main page of Application:***
 
-![Index/Main Page of the Application](https://lh3.googleusercontent.com/wmtZRgnvnzDUFrsj19RW8IetjG36GzBBoBnN36et8l5oPqQPFibLWrmpSK9AwjdnxWEktcuME0-w)
+![Index/Main Page of the Application](https://github.com/JapmanN/Populify/blob/master/public/assets/IndexScreenshot.png?raw=true)
 
 
 ***More Information page:***
 
-![More Information Page of the Application](https://lh3.googleusercontent.com/pC6P1lOx39eKnfbIripq_R9uJaE9XDKS0Uz8T8pJsPT-b5hysJzS_ry8jpMZWQ6QYOdJN9lydi7N)
+![More Information Page of the Application](https://github.com/JapmanN/Populify/blob/master/public/assets/InfoScreenshot.png?raw=true)
 
 
 ***Error page:***
 
-![Error Page of the application](https://lh3.googleusercontent.com/QTA63GrobgKR3x50K1KvPLAYDnNUqCclewGZsYKB1dW-Wt_uyKYZCZ9HkOXkyx7pVPcl-HTgcEVq)
+![Error Page of the application](https://github.com/JapmanN/Populify/blob/master/public/assets/ErrorScreenshot.png?raw=true)
 
 Colours and icons used for the application are listed at the bottom of the README.
 
