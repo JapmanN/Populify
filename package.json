@@ -20,7 +20,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "ejs": "^2.7.1",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "spotify-web-api-node": "^4.0.0"
   }
 }
